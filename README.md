@@ -12,11 +12,12 @@ Install all project dependencies:
 
 ```bash
 npm install
+```
 
 Create a `.env` file in the root directory:
 
 ```bash
-cp .env .env
+cp .env.example .env
 ```
 
 Then update the `.env` file with the following configuration:
@@ -171,4 +172,5 @@ Implement the following routes:
 
 Push your final solution to the GitHub Classroom repository. The project will be automatically evaluated using tests. Ensure all tests pass successfully before submitting.
 
+Good luck.
 Good luck.
