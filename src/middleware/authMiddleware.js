@@ -10,7 +10,6 @@ import User from "../models/User.js";
 // 6. If invalid → return 401
 
 const authMiddleware = async (req, res, next) => {
-  //  implement here
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
@@ -23,12 +22,8 @@ const authMiddleware = async (req, res, next) => {
         req.user = await User.findById(decoded.id).select("-password");
         next();
     } catch (err) {
-        console.error(error);
+        console.error(err);
         return res.status(401).json({ message: "Not authorized, token failed" });
-    }
-
-    if (!token) {
-        res.status(401).json({ message: "Not authorized, no token" });
     }
 };
 
